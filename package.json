@@ -1,0 +1,32 @@
+{
+  "name": "globs-to-files",
+  "version": "0.0.1",
+  "description": "expand globs into array of files",
+  "main": "src/",
+  "scripts": {
+    "test": "standard && node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/chinedufn/globs-to-files.git"
+  },
+  "keywords": [
+    "expand",
+    "file",
+    "glob",
+    "deglob"
+  ],
+  "author": "Chinedu Francis Nwafili",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chinedufn/globs-to-files/issues"
+  },
+  "homepage": "https://github.com/chinedufn/globs-to-files",
+  "devDependencies": {
+    "standard": "^4.0.1",
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "glob": "^5.0.10"
+  }
+}
