@@ -3,7 +3,7 @@ globs-to-files
 
 Create a file array from a glob array
 
-### Usage
+## Usage
 
 ```js
 var deglob = require('globs-to-files')
@@ -14,15 +14,15 @@ deglob(['test/**/*.js', 'src/*.js'], null, function (err, files) {
 var files = deglob.sync(['test/**/*.js'])
 ```
 
-### API
+## API
 
-`####deglob(globArray, [options], cb)` -> `####array`
+#### `deglob(globArray, [options], cb)` -> `array`
 
-*****globArray**
+**globArray**
 
 *Required*
 
-Type: `string`
+Type: `array`
 
 An array of globs to be expanded
 
@@ -38,12 +38,12 @@ Type: `function`
 
 `globs-to-files` uses [node-glob](https://github.com/isaacs/node-glob#globpattern-options-cb)
 
-### To Test
+## To Test
 
 ```js
 npm test
 ```
 
-### License
+## License
 
 MIT
