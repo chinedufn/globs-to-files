@@ -27,6 +27,7 @@
     "tape": "^4.0.0"
   },
   "dependencies": {
+    "asyncreduce": "~0.1.4",
     "glob": "^5.0.10"
   }
 }

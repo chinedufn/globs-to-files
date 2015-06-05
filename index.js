@@ -1,33 +1,36 @@
 'use strict'
 
 var glob = require('glob')
+var reduce = require('asyncreduce')
 
 exports = module.exports = globToFiles
 exports.sync = globToFilesSync
 
-function globToFiles (files, options, cb) {
+function globToFiles (globs, options, callback) {
   if (typeof options === 'function') {
-    cb = options; options = null
+    callback = options
+    options = null
   }
 
-  var expandedFiles = []
-  var totalGlobs = files.length
-  var globsProcessed = 0
-  for (var i = 0; i < totalGlobs; i++) {
-    glob(files[i], options, function (err, files) {
-      if (err) return cb(err)
-      expandedFiles = expandedFiles.concat(files)
-      if (++globsProcessed === totalGlobs) {
-        cb(null, expandedFiles)
-      }
+  reduce(globs, [], expand, done)
+
+  function expand (accumulator, globPath, callback) {
+    glob(globPath, options, function (err, files) {
+      if (err) return callback(err)
+      accumulator.push.apply(accumulator, files)
+      callback(null, accumulator)
     })
+  }
+
+  function done (err, files) {
+    if (err) return callback(err)
+    callback(null, files)
   }
 }
 
-function globToFilesSync (files, options) {
-  var expandedFiles = []
-  files.forEach(function (arg) {
-    expandedFiles = expandedFiles.concat(glob.sync(arg, options))
-  })
-  return expandedFiles
+function globToFilesSync (globs, options) {
+  return globs.reduce(function (files, globPath) {
+    files.push.apply(files, glob.sync(globPath, options))
+    return files
+  }, [])
 }
