@@ -3,7 +3,7 @@
 var test = require('tape')
 var deglob = require('../')
 
-var globs = ['fixture/one.txt', 'fixture/t*.txt', 'fixture/**/*.wild']
+var globs = ['fixture/one.txt', 'fixture/one.txt', 'fixture/t*.txt', 'fixture/**/*.wild']
 var options = {cwd: __dirname}
 
 test('deglob async', function (t) {

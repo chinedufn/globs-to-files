@@ -24,13 +24,19 @@ function globToFiles (globs, options, callback) {
 
   function done (err, files) {
     if (err) return callback(err)
-    callback(null, files)
+    callback(null, unique(files))
   }
 }
 
 function globToFilesSync (globs, options) {
   return globs.reduce(function (files, globPath) {
     files.push.apply(files, glob.sync(globPath, options))
-    return files
+    return unique(files)
   }, [])
+}
+
+function unique (files) {
+  return files.filter(function (file, index, self) {
+    return self.indexOf(file) === index
+  })
 }
