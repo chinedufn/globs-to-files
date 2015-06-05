@@ -8,15 +8,15 @@ Create a file array from a glob array
 ```js
 var deglob = require('globs-to-files')
 
-deglob(['test/\*\*/\*.js', 'src/\*.js'], null, function (err, files) {
+deglob(['test/**/*.js', 'src/*.js'], null, function (err, files) {
 })
 
-var files = deglob.sync(['test/\*\*/\*.js'])
+var files = deglob.sync(['test/**/*.js'])
 ```
 
 ### API
 
-`deglob(globArray, [options], cb)` -> `array`
+`####deglob(globArray, [options], cb)` -> `####array`
 
 *****globArray**
 
