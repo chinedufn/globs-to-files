@@ -1,8 +1,5 @@
-globs-to-files
+globs-to-files [![Build Status](https://travis-ci.org/chinedufn/metalsmith-watcher.svg?branch=master)](https://travis-ci.org/chinedufn/globs-to-files)
 ================
-
-[![Build Status](https://travis-ci.org/chinedufn/metalsmith-watcher.svg?branch=master)](https://travis-ci.org/chinedufn/globs-to-files)
-[![Dependencies](https://david-dm.org/chinedufn/metalsmith-watcher.svg)](https://david-dm.org/chinedufn/globs-to-files)
 
 > Expand multiple globs into file paths
 
