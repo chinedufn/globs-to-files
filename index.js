@@ -1,6 +1,11 @@
+'use strict'
+
 var glob = require('glob')
 
-function Deglob (files, options, cb) {
+exports = module.exports = globToFiles
+exports.sync = globToFilesSync
+
+function globToFiles (files, options, cb) {
   if (typeof options === 'function') {
     cb = options; options = null
   }
@@ -19,12 +24,10 @@ function Deglob (files, options, cb) {
   }
 }
 
-Deglob.sync = function (files, options) {
+function globToFilesSync (files, options) {
   var expandedFiles = []
   files.forEach(function (arg) {
     expandedFiles = expandedFiles.concat(glob.sync(arg, options))
   })
   return expandedFiles
 }
-
-module.exports = Deglob
