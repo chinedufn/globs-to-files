@@ -27,6 +27,7 @@
     "tape": "^4.0.0"
   },
   "dependencies": {
+    "array-uniq": "~1.0.2",
     "asyncreduce": "~0.1.4",
     "glob": "^5.0.10"
   },
