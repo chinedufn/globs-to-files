@@ -14,11 +14,11 @@ function globToFiles (globs, options, callback) {
 
   reduce(globs, [], expand, done)
 
-  function expand (accumulator, globPath, callback) {
+  function expand (accumulator, globPath, next) {
     glob(globPath, options, function (err, files) {
-      if (err) return callback(err)
+      if (err) return next(err)
       accumulator.push.apply(accumulator, files)
-      callback(null, accumulator)
+      next(null, accumulator)
     })
   }
 
