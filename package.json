@@ -1,8 +1,8 @@
 {
   "name": "globs-to-files",
-  "version": "0.0.1",
   "description": "Expand multiple globs into file paths",
-  "main": "src/",
+  "version": "0.0.1",
+  "main": "index.js",
   "scripts": {
     "test": "standard && node test/index.js"
   },
@@ -27,6 +27,11 @@
     "tape": "^4.0.0"
   },
   "dependencies": {
+    "asyncreduce": "~0.1.4",
     "glob": "^5.0.10"
-  }
+  },
+  "files": [
+    "index.js",
+    "readme.md"
+  ]
 }
