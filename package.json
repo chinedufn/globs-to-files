@@ -29,5 +29,9 @@
   "dependencies": {
     "asyncreduce": "~0.1.4",
     "glob": "^5.0.10"
-  }
+  },
+  "files": [
+    "index.js",
+    "readme.md"
+  ]
 }
