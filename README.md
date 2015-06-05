@@ -1,7 +1,7 @@
 globs-to-files
 ================
 
-Create a file array from a glob array
+> Expand multiple globs into file paths
 
 ## Usage
 
@@ -16,33 +16,27 @@ var files = deglob.sync(['test/**/*.js'])
 
 ## API
 
-#### `deglob(globArray, [options], cb)` -> `array`
+#### `deglob(globArray, [options], callback)` -> `array[string]`
 
-**globArray**
+##### globArray
 
-*Required*
-
+*Required*  
 Type: `array`
 
-An array of globs to be expanded
+An array of globs to be expanded.
 
-**options**
+##### options
 
-`globs-to-files` uses [node-glob](https://github.com/isaacs/node-glob#options)
+Type: `object`  
 
-**cb**
+Options to pass to [node-glob](https://github.com/isaacs/node-glob#options).
 
-*Required*
+##### callback
 
+*Required*  
 Type: `function`
 
-`globs-to-files` uses [node-glob](https://github.com/isaacs/node-glob#globpattern-options-cb)
-
-## To Test
-
-```js
-npm test
-```
+Callback to call with file paths.
 
 ## License
 
