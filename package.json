@@ -1,7 +1,7 @@
 {
   "name": "globs-to-files",
   "description": "Expand multiple globs into file paths",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "scripts": {
     "test": "standard && node test/index.js"
