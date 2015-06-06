@@ -17,7 +17,7 @@ function globToFiles (globs, options, callback) {
   reduce(globs, [], expand, done)
 
   function expand (accumulator, globPath, next) {
-    var absolute = options.cwd ? options.cwd : ''
+    var absolute = options ? (options.cwd ? options.cwd : '') : ''
     glob(globPath, options, function (err, files) {
       if (err) return next(err)
       accumulator.push.apply(accumulator, files.map(function (file) {
@@ -34,7 +34,7 @@ function globToFiles (globs, options, callback) {
 }
 
 function globToFilesSync (globs, options) {
-  var absolute = options.cwd ? options.cwd : ''
+  var absolute = options ? (options.cwd ? options.cwd : '') : ''
   return globs.reduce(function (files, globPath) {
     files.push.apply(files, glob.sync(globPath, options))
     return unique(files.map(function (file) {
