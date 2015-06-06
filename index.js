@@ -2,6 +2,7 @@
 
 var glob = require('glob')
 var reduce = require('asyncreduce')
+var unique = require('array-uniq')
 
 exports = module.exports = globToFiles
 exports.sync = globToFilesSync
@@ -33,10 +34,4 @@ function globToFilesSync (globs, options) {
     files.push.apply(files, glob.sync(globPath, options))
     return unique(files)
   }, [])
-}
-
-function unique (files) {
-  return files.filter(function (file, index, self) {
-    return self.indexOf(file) === index
-  })
 }
