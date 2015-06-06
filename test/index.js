@@ -5,6 +5,7 @@ var deglob = require('../')
 
 var globs = ['fixture/one.txt', 'fixture/one.txt', 'fixture/t*.txt', 'fixture/**/*.wild']
 var options = {cwd: __dirname}
+var path = require('path')
 
 test('deglob async', function (t) {
   t.plan(1)
@@ -21,9 +22,9 @@ test('deglob sync', function (t) {
 })
 
 var allFiles = [
-  'fixture/one.txt',
-  'fixture/three.txt',
-  'fixture/two.txt',
-  'fixture/wildcard/subdirectory/one.wild',
-  'fixture/wildcard/subdirectory/two.wild'
+  path.resolve(__dirname, 'fixture/one.txt'),
+  path.resolve(__dirname, 'fixture/three.txt'),
+  path.resolve(__dirname, 'fixture/two.txt'),
+  path.resolve(__dirname, 'fixture/wildcard/subdirectory/one.wild'),
+  path.resolve(__dirname, 'fixture/wildcard/subdirectory/two.wild')
 ]
