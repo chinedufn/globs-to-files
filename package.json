@@ -29,7 +29,8 @@
   "dependencies": {
     "array-uniq": "~1.0.2",
     "asyncreduce": "~0.1.4",
-    "glob": "^5.0.10"
+    "glob": "^5.0.10",
+    "xtend": "^4.0.0"
   },
   "files": [
     "index.js",
