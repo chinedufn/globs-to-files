@@ -1,7 +1,13 @@
 globs-to-files [![Build Status](https://travis-ci.org/chinedufn/metalsmith-watcher.svg?branch=master)](https://travis-ci.org/chinedufn/globs-to-files)
 ================
 
-> Expand multiple globs into file paths
+> Expand multiple globs into absolute file paths
+
+## Install
+
+```
+$ npm install --save globs-to-files
+```
 
 ## Usage
 
@@ -20,10 +26,10 @@ var files = deglob.sync(['test/**/*.js'])
 
 ##### globArray
 
-*Required*  
+*Required*
 Type: `array`
 
-An array of globs to be expanded.
+An array of globs to be expanded into absolute file paths.
 
 ##### options
 
@@ -33,7 +39,7 @@ Options to pass to [node-glob](https://github.com/isaacs/node-glob#options).
 
 ##### callback
 
-*Required*  
+*Required*
 Type: `function`
 
 Callback to call with file paths.
